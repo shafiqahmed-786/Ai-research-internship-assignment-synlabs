@@ -1,0 +1,21 @@
+ERD ASCII
+
++------------------+
+| sources
+|  - id: uuid (PK)
+|  - name: varchar(255)
+|  - type: varchar(50)
++------------------+
+
++------------------+
+| content
+|  - id: uuid (PK)
+|  - source_id: uuid
+|  - raw_text: text
+|  - topic: varchar(100)
+|  - ingested_at: timestamp
++------------------+
+
+
+Relations:
+content.source_id -> sources.id (many-to-one)
